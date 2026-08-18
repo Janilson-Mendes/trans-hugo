@@ -1,0 +1,3647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRANS HUGO | Turismo & Excursões</title>
+
+<style>
+
+/* =========================================================
+   TRANS HUGO
+   SITE COMPLETO EM UM ÚNICO HTML
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#ffffff;
+    color:#073d2b;
+    overflow-x:hidden;
+}
+
+:root{
+    --verde:#00a86b;
+    --verde2:#00c77b;
+    --verde3:#007c50;
+    --verde4:#004b32;
+    --verde5:#002f20;
+    --branco:#ffffff;
+    --cinza:#f1f7f4;
+    --cinza2:#dcebe4;
+    --texto:#527066;
+}
+
+
+/* =========================================================
+   BARRA SUPERIOR
+========================================================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:78px;
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    background:rgba(0,47,32,.92);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    text-decoration:none;
+}
+
+.logo-icon{
+    width:44px;
+    height:44px;
+
+    border:2px solid white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:13px;
+    font-weight:900;
+
+    transform:rotate(-5deg);
+
+    position:relative;
+}
+
+.logo-icon:after{
+    content:"";
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    background:var(--verde2);
+
+    border-radius:50%;
+
+    right:-5px;
+    top:-5px;
+}
+
+.logo-text{
+    line-height:.9;
+}
+
+.logo-small{
+    display:block;
+
+    font-size:8px;
+    letter-spacing:2px;
+
+    color:#fff;
+    margin-bottom:5px;
+}
+
+.logo-big{
+    font-size:25px;
+    font-weight:900;
+}
+
+.logo-big span{
+    color:var(--verde2);
+}
+
+
+/* MENU */
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+
+    font-size:11px;
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    position:relative;
+}
+
+nav a:after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:var(--verde2);
+
+    transition:.3s;
+}
+
+nav a:hover:after{
+    width:100%;
+}
+
+
+/* BOTÃO */
+
+.header-button{
+    background:var(--verde);
+
+    color:white;
+
+    padding:14px 20px;
+
+    text-decoration:none;
+
+    font-size:10px;
+    font-weight:900;
+
+    box-shadow:5px 5px 0 var(--verde5);
+
+    transition:.2s;
+}
+
+.header-button:hover{
+    transform:translate(3px,3px);
+    box-shadow:2px 2px 0 var(--verde5);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    padding:150px 7% 90px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(0,199,123,.25),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #003d29,
+            #006b47
+        );
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+}
+
+
+/* TEXTURA */
+
+.hero:before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    opacity:.12;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size:24px 24px;
+}
+
+
+/* CONTEÚDO */
+
+.hero-content{
+    position:relative;
+    z-index:5;
+
+    width:55%;
+
+    max-width:750px;
+}
+
+.hero-label{
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:4px;
+
+    color:var(--verde2);
+
+    margin-bottom:22px;
+}
+
+.hero-label:before{
+    content:"";
+
+    display:inline-block;
+
+    width:35px;
+    height:3px;
+
+    background:var(--verde2);
+
+    margin-right:10px;
+
+    vertical-align:middle;
+}
+
+.hero h1{
+    font-size:clamp(70px,10vw,145px);
+
+    line-height:.78;
+
+    letter-spacing:-5px;
+
+    margin-bottom:35px;
+}
+
+.hero h1 span{
+    display:block;
+    color:var(--verde2);
+}
+
+.hero-description{
+    max-width:500px;
+
+    color:rgba(255,255,255,.8);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+
+    margin-top:32px;
+}
+
+.button-green{
+    padding:16px 25px;
+
+    background:white;
+
+    color:var(--verde4);
+
+    text-decoration:none;
+
+    font-size:10px;
+    font-weight:900;
+
+    box-shadow:6px 6px 0 var(--verde);
+
+    transition:.2s;
+}
+
+.button-green:hover{
+    transform:translate(3px,3px);
+    box-shadow:3px 3px 0 var(--verde);
+}
+
+.button-outline{
+    padding:15px 24px;
+
+    border:1px solid white;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:10px;
+    font-weight:900;
+
+    transition:.3s;
+}
+
+.button-outline:hover{
+    background:white;
+    color:var(--verde4);
+}
+
+
+/* =========================================================
+   ÔNIBUS ILUSTRADO
+========================================================= */
+
+.hero-bus-area{
+    position:absolute;
+
+    right:5%;
+    bottom:7%;
+
+    width:46%;
+    height:65%;
+
+    z-index:4;
+}
+
+
+/* círculo */
+
+.green-circle{
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    right:5%;
+    top:5%;
+
+    border-radius:50%;
+
+    background:
+        rgba(0,199,123,.16);
+
+    border:
+        2px solid rgba(255,255,255,.25);
+}
+
+
+/* ônibus */
+
+.bus{
+    position:absolute;
+
+    width:480px;
+    height:210px;
+
+    right:0;
+    top:25%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f2f6f4 65%,
+            #00a86b 66%,
+            #007c50 100%
+        );
+
+    border-radius:35px 25px 20px 20px;
+
+    box-shadow:
+        0 35px 60px rgba(0,0,0,.3);
+
+    transform:skewY(-2deg);
+
+    border:4px solid #d8e9e1;
+}
+
+
+/* frente */
+
+.bus-front{
+    position:absolute;
+
+    right:-18px;
+    top:30px;
+
+    width:80px;
+    height:130px;
+
+    background:#073d2b;
+
+    border-radius:15px 25px 20px 15px;
+}
+
+
+/* janela */
+
+.bus-window{
+    position:absolute;
+
+    top:22px;
+    left:28px;
+
+    width:330px;
+    height:72px;
+
+    display:flex;
+    gap:5px;
+
+    background:#063d2d;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    padding:5px;
+}
+
+.window{
+    flex:1;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9debd0,
+            #116f50
+        );
+
+    border-radius:4px;
+}
+
+
+/* linha */
+
+.bus-line{
+    position:absolute;
+
+    left:28px;
+    top:105px;
+
+    width:330px;
+    height:5px;
+
+    background:var(--verde);
+}
+
+
+/* logo ônibus */
+
+.bus-logo{
+    position:absolute;
+
+    left:35px;
+    top:125px;
+
+    color:#073d2b;
+
+    font-size:21px;
+
+    font-weight:900;
+}
+
+.bus-logo span{
+    color:#00a86b;
+}
+
+
+/* rodas */
+
+.wheel{
+    position:absolute;
+
+    width:62px;
+    height:62px;
+
+    background:#071a14;
+
+    border-radius:50%;
+
+    bottom:-30px;
+
+    border:8px solid #d7e3df;
+
+    box-shadow:
+        inset 0 0 0 8px #132c23;
+}
+
+.wheel1{
+    left:70px;
+}
+
+.wheel2{
+    right:85px;
+}
+
+
+/* luzes */
+
+.light{
+    position:absolute;
+
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:#dffff3;
+
+    box-shadow:
+        0 0 20px #00ff9d;
+}
+
+.light1{
+    right:5px;
+    top:55px;
+}
+
+.light2{
+    right:5px;
+    top:95px;
+}
+
+
+/* =========================================================
+   RABISCOS
+========================================================= */
+
+.scribble{
+    position:absolute;
+
+    font-size:22px;
+
+    font-weight:900;
+
+    color:white;
+
+    transform:rotate(-8deg);
+
+    z-index:10;
+}
+
+.scribble.one{
+    right:45%;
+    top:12%;
+}
+
+.scribble.two{
+    right:12%;
+    bottom:5%;
+
+    color:var(--verde2);
+
+    transform:rotate(8deg);
+}
+
+.circle-draw{
+    position:absolute;
+
+    width:150px;
+    height:65px;
+
+    border:3px solid white;
+
+    border-radius:50%;
+
+    right:15%;
+    top:10%;
+
+    transform:rotate(-8deg);
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marquee{
+    height:60px;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:white;
+
+    border-top:3px solid var(--verde);
+    border-bottom:3px solid var(--verde);
+
+    color:var(--verde4);
+}
+
+.marquee-content{
+    white-space:nowrap;
+
+    animation:
+        scrollText 20s linear infinite;
+}
+
+.marquee span{
+    font-size:13px;
+
+    font-weight:900;
+
+    margin-right:45px;
+
+    letter-spacing:2px;
+}
+
+@keyframes scrollText{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.about{
+    padding:130px 7%;
+
+    background:white;
+}
+
+.about-container{
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+}
+
+.section-label{
+    color:var(--verde);
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    font-weight:900;
+}
+
+.about h2{
+    font-size:72px;
+
+    line-height:.82;
+
+    margin:18px 0 28px;
+
+    letter-spacing:-3px;
+}
+
+.about h2 span{
+    display:block;
+
+    color:var(--verde);
+}
+
+.about p{
+    max-width:520px;
+
+    color:var(--texto);
+
+    font-size:13px;
+
+    line-height:1.9;
+}
+
+
+/* CHECKS */
+
+.checks{
+    display:grid;
+
+    gap:13px;
+
+    margin-top:30px;
+}
+
+.check{
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    font-size:12px;
+    font-weight:800;
+}
+
+.check b{
+    width:27px;
+    height:27px;
+
+    background:var(--verde);
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+/* =========================================================
+   ARTE SOBRE
+========================================================= */
+
+.about-art{
+    height:480px;
+
+    position:relative;
+}
+
+.paper{
+    position:absolute;
+
+    width:360px;
+    height:400px;
+
+    right:40px;
+    top:20px;
+
+    background:white;
+
+    border:3px solid var(--verde);
+
+    padding:12px;
+
+    box-shadow:
+        18px 20px 0 rgba(0,168,107,.15);
+
+    transform:rotate(5deg);
+}
+
+.paper-inner{
+    width:100%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #004b32,
+            #00a86b
+        );
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.paper-inner:before{
+    content:"TH";
+
+    position:absolute;
+
+    font-size:150px;
+
+    font-weight:900;
+
+    color:rgba(255,255,255,.12);
+}
+
+.paper-title{
+    position:relative;
+
+    color:white;
+
+    text-align:center;
+
+    font-size:45px;
+
+    font-weight:900;
+}
+
+.paper-title span{
+    color:#8effd0;
+}
+
+
+/* cartão escrito */
+
+.note{
+    position:absolute;
+
+    left:0;
+    bottom:30px;
+
+    width:210px;
+
+    padding:25px;
+
+    background:#fbfffd;
+
+    border:2px solid var(--verde);
+
+    box-shadow:8px 8px 0 var(--verde);
+
+    transform:rotate(-7deg);
+
+    font-family:cursive;
+
+    font-size:17px;
+
+    color:var(--verde4);
+}
+
+.note strong{
+    color:var(--verde);
+}
+
+
+/* =========================================================
+   DESTINOS
+========================================================= */
+
+.destinations{
+    padding:130px 7%;
+
+    background:var(--verde5);
+
+    color:white;
+
+    position:relative;
+}
+
+.destinations:before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.07;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size:25px 25px;
+}
+
+.section-head{
+    max-width:1250px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    margin-bottom:55px;
+
+    position:relative;
+}
+
+.section-head h2{
+    font-size:72px;
+
+    line-height:.8;
+
+    margin-top:15px;
+}
+
+.section-head h2 span{
+    color:var(--verde2);
+}
+
+.section-head p{
+    max-width:400px;
+
+    color:rgba(255,255,255,.6);
+
+    font-size:12px;
+
+    line-height:1.8;
+}
+
+
+/* DESTINATION CARDS */
+
+.destination-grid{
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+
+    position:relative;
+}
+
+.destination{
+    height:410px;
+
+    border:2px solid white;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:var(--verde3);
+
+    transition:.4s;
+}
+
+.destination:hover{
+    transform:translateY(-10px);
+}
+
+.destination-background{
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:80px;
+
+    font-weight:900;
+
+    color:rgba(255,255,255,.1);
+
+    background:
+        linear-gradient(
+            145deg,
+            #00a86b,
+            #004b32
+        );
+}
+
+.destination:nth-child(2)
+.destination-background{
+    background:
+        linear-gradient(
+            145deg,
+            #008c5a,
+            #003d29
+        );
+}
+
+.destination-content{
+    position:absolute;
+
+    left:25px;
+    right:25px;
+    bottom:25px;
+
+    z-index:2;
+}
+
+.destination-content small{
+    color:#8effd0;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+}
+
+.destination-content h3{
+    font-size:44px;
+
+    margin-top:5px;
+}
+
+.destination-content p{
+    font-size:11px;
+
+    color:rgba(255,255,255,.7);
+
+    margin-top:8px;
+}
+
+.destination-number{
+    position:absolute;
+
+    top:15px;
+    right:20px;
+
+    font-size:65px;
+
+    font-weight:900;
+
+    color:rgba(255,255,255,.5);
+}
+
+
+/* =========================================================
+   VIAGENS
+========================================================= */
+
+.trips{
+    padding:130px 7%;
+
+    background:var(--cinza);
+}
+
+.trip-grid{
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.trip-card{
+    background:white;
+
+    border:1px solid var(--cinza2);
+
+    padding:10px;
+
+    box-shadow:
+        0 20px 50px rgba(0,70,45,.08);
+
+    transition:.4s;
+}
+
+.trip-card:hover{
+    transform:translateY(-10px);
+}
+
+.trip-photo{
+    height:200px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--verde4),
+            var(--verde)
+        );
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.trip-photo:before{
+    content:"TRANS HUGO";
+
+    position:absolute;
+
+    font-size:50px;
+
+    font-weight:900;
+
+    color:rgba(255,255,255,.12);
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-8deg);
+
+    white-space:nowrap;
+}
+
+.mini-bus{
+    position:absolute;
+
+    width:230px;
+    height:80px;
+
+    background:white;
+
+    border-radius:20px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-bottom:10px solid var(--verde);
+}
+
+.mini-bus:before{
+    content:"";
+
+    position:absolute;
+
+    left:15px;
+    top:12px;
+
+    width:140px;
+    height:27px;
+
+    background:var(--verde4);
+
+    border-radius:5px;
+}
+
+.mini-wheel{
+    position:absolute;
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    background:#10211b;
+
+    bottom:-18px;
+
+    border:5px solid white;
+}
+
+.mini-wheel.one{
+    left:30px;
+}
+
+.mini-wheel.two{
+    right:30px;
+}
+
+.trip-content{
+    padding:22px 12px;
+}
+
+.trip-date{
+    color:var(--verde);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.trip-content h3{
+    margin:10px 0;
+
+    font-size:20px;
+
+    color:var(--verde5);
+}
+
+.trip-content p{
+    font-size:11px;
+
+    color:var(--texto);
+
+    line-height:1.7;
+}
+
+.trip-details{
+    margin-top:18px;
+
+    padding-top:15px;
+
+    border-top:1px solid var(--cinza2);
+
+    display:grid;
+
+    gap:8px;
+}
+
+.trip-details div{
+    font-size:10px;
+
+    color:#60766c;
+}
+
+.trip-bottom{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:20px;
+}
+
+.price{
+    color:var(--verde4);
+
+    font-size:21px;
+
+    font-weight:900;
+}
+
+.price small{
+    font-size:9px;
+
+    color:#879890;
+}
+
+.reserve{
+    border:none;
+
+    background:var(--verde);
+
+    color:white;
+
+    padding:12px 17px;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.reserve:hover{
+    background:var(--verde4);
+}
+
+
+/* =========================================================
+   RASTREAMENTO
+========================================================= */
+
+.tracking{
+    padding:130px 7%;
+
+    background:white;
+}
+
+.tracking-container{
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:.8fr 1.5fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.tracking-text h2{
+    font-size:72px;
+
+    line-height:.8;
+
+    margin:18px 0 25px;
+}
+
+.tracking-text h2 span{
+    color:var(--verde);
+}
+
+.tracking-text p{
+    color:var(--texto);
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.status{
+    margin-top:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:16px;
+
+    background:var(--cinza);
+
+    border-left:4px solid var(--verde);
+}
+
+.status-dot{
+    width:12px;
+    height:12px;
+
+    background:#00d987;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 15px #00d987;
+}
+
+.status strong{
+    display:block;
+
+    color:var(--verde4);
+
+    font-size:11px;
+}
+
+.status span{
+    display:block;
+
+    color:var(--texto);
+
+    font-size:9px;
+
+    margin-top:4px;
+}
+
+.update{
+    margin-top:25px;
+
+    border:none;
+
+    background:var(--verde);
+
+    color:white;
+
+    padding:15px 22px;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    box-shadow:5px 5px 0 var(--verde4);
+}
+
+
+/* =========================================================
+   MAPA
+========================================================= */
+
+.map{
+    height:480px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:4px solid var(--verde);
+
+    background:#e8f5ef;
+
+    box-shadow:
+        15px 15px 0 rgba(0,168,107,.12);
+}
+
+
+/* grid */
+
+.map:before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 95%,
+            rgba(0,100,65,.1) 95%
+        ),
+        linear-gradient(
+            transparent 95%,
+            rgba(0,100,65,.1) 95%
+        );
+
+    background-size:45px 45px;
+}
+
+
+/* estradas */
+
+.map-road{
+    position:absolute;
+
+    height:9px;
+
+    background:white;
+
+    border:2px solid #c9ddd4;
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.08);
+}
+
+.road-a{
+    width:110%;
+
+    left:-5%;
+    top:55%;
+
+    transform:rotate(-20deg);
+}
+
+.road-b{
+    width:100%;
+
+    top:30%;
+
+    transform:rotate(25deg);
+}
+
+.road-c{
+    width:90%;
+
+    top:75%;
+
+    transform:rotate(-8deg);
+}
+
+
+/* cidades */
+
+.city{
+    position:absolute;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+    z-index:5;
+}
+
+.city-dot{
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--verde);
+
+    border:4px solid white;
+
+    box-shadow:
+        0 0 0 8px rgba(0,168,107,.18);
+}
+
+.city-name{
+    background:var(--verde4);
+
+    color:white;
+
+    padding:6px 10px;
+
+    font-size:9px;
+
+    font-weight:900;
+}
+
+.goiania{
+    left:15%;
+    top:62%;
+}
+
+.caldas{
+    right:12%;
+    top:25%;
+}
+
+
+/* ônibus mapa */
+
+.map-bus{
+    position:absolute;
+
+    left:52%;
+    top:40%;
+
+    width:65px;
+    height:65px;
+
+    border-radius:50%;
+
+    background:var(--verde);
+
+    border:5px solid white;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:27px;
+
+    z-index:10;
+
+    box-shadow:
+        0 0 0 12px rgba(0,168,107,.18),
+        0 0 35px rgba(0,168,107,.5);
+
+    animation:busPulse 2s infinite;
+}
+
+@keyframes busPulse{
+
+    0%{
+        box-shadow:
+            0 0 0 0 rgba(0,168,107,.5);
+    }
+
+    70%{
+        box-shadow:
+            0 0 0 25px rgba(0,168,107,0);
+    }
+
+    100%{
+        box-shadow:
+            0 0 0 0 rgba(0,168,107,0);
+    }
+
+}
+
+.bus-code{
+    position:absolute;
+
+    left:50%;
+    top:calc(40% + 75px);
+
+    transform:translateX(-50%);
+
+    background:var(--verde4);
+
+    color:white;
+
+    padding:7px 12px;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    z-index:10;
+}
+
+
+/* mapa info */
+
+.map-info{
+    position:absolute;
+
+    left:20px;
+    bottom:20px;
+
+    background:var(--verde4);
+
+    color:white;
+
+    padding:15px 18px;
+
+    z-index:10;
+
+    border-left:4px solid var(--verde2);
+}
+
+.map-info strong{
+    display:block;
+
+    font-size:10px;
+
+    color:var(--verde2);
+}
+
+.map-info span{
+    display:block;
+
+    margin-top:5px;
+
+    font-size:9px;
+
+    color:rgba(255,255,255,.7);
+}
+
+
+/* =========================================================
+   FRASE
+========================================================= */
+
+.quote{
+    background:var(--verde);
+
+    color:white;
+
+    text-align:center;
+
+    padding:110px 7%;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.quote:before{
+    content:"TH";
+
+    position:absolute;
+
+    font-size:250px;
+
+    font-weight:900;
+
+    color:rgba(255,255,255,.07);
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+}
+
+.quote h2{
+    position:relative;
+
+    font-family:cursive;
+
+    font-size:clamp(28px,5vw,60px);
+
+    transform:rotate(-2deg);
+}
+
+.quote p{
+    position:relative;
+
+    margin-top:25px;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+}
+
+
+/* =========================================================
+   CONTATO
+========================================================= */
+
+.contact{
+    padding:120px 7%;
+
+    background:var(--cinza);
+
+    text-align:center;
+}
+
+.contact h2{
+    font-size:70px;
+
+    line-height:.85;
+
+    margin:20px 0;
+}
+
+.contact h2 span{
+    color:var(--verde);
+}
+
+.contact p{
+    color:var(--texto);
+
+    font-size:13px;
+}
+
+.contact-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:30px;
+}
+
+.contact-button{
+    padding:16px 28px;
+
+    background:var(--verde);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    box-shadow:5px 5px 0 var(--verde4);
+}
+
+.contact-button.dark{
+    background:var(--verde4);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:var(--verde5);
+
+    color:white;
+
+    padding:70px 7% 25px;
+}
+
+.footer-grid{
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    gap:50px;
+
+    padding-bottom:45px;
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.footer-description{
+    max-width:330px;
+
+    margin-top:20px;
+
+    color:rgba(255,255,255,.55);
+
+    font-size:11px;
+
+    line-height:1.8;
+}
+
+.footer-column{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.footer-column h4{
+    color:var(--verde2);
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    margin-bottom:5px;
+}
+
+.footer-column a{
+    color:rgba(255,255,255,.6);
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    transition:.2s;
+}
+
+.footer-column a:hover{
+    color:white;
+    padding-left:4px;
+}
+
+.footer-bottom{
+    max-width:1250px;
+
+    margin:25px auto 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:rgba(255,255,255,.4);
+
+    font-size:9px;
+}
+
+
+/* =========================================================
+   MODAL RESERVA
+========================================================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,30,20,.8);
+
+    backdrop-filter:blur(8px);
+
+    z-index:2000;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:500px;
+
+    background:white;
+
+    padding:35px;
+
+    position:relative;
+
+    border-top:6px solid var(--verde);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.3);
+}
+
+.modal-close{
+    position:absolute;
+
+    right:20px;
+    top:15px;
+
+    border:none;
+
+    background:none;
+
+    font-size:25px;
+
+    color:var(--verde4);
+
+    cursor:pointer;
+}
+
+.modal-box h2{
+    font-size:32px;
+
+    color:var(--verde4);
+
+    margin-bottom:8px;
+}
+
+.modal-box p{
+    color:var(--texto);
+
+    font-size:12px;
+
+    margin-bottom:25px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    color:var(--verde4);
+
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+
+    padding:13px;
+
+    border:1px solid var(--cinza2);
+
+    outline:none;
+
+    font-size:12px;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:var(--verde);
+}
+
+.form-button{
+    width:100%;
+
+    border:none;
+
+    background:var(--verde);
+
+    color:white;
+
+    padding:15px;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   MENU MOBILE
+========================================================= */
+
+.mobile-menu{
+    display:none;
+
+    position:fixed;
+
+    top:78px;
+    left:0;
+
+    width:100%;
+
+    background:var(--verde5);
+
+    padding:25px;
+
+    z-index:999;
+}
+
+.mobile-menu a{
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+    font-size:12px;
+
+    font-weight:900;
+}
+
+.menu-button{
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media(max-width:1000px){
+
+    nav,
+    .header-button{
+        display:none;
+    }
+
+    .menu-button{
+        display:block;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .hero-bus-area{
+        opacity:.25;
+
+        width:70%;
+    }
+
+    .about-container,
+    .tracking-container{
+        grid-template-columns:1fr;
+    }
+
+    .destination-grid,
+    .trip-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    header{
+        padding:0 20px;
+    }
+
+    .hero{
+        padding:
+            130px 25px 80px;
+    }
+
+    .hero h1{
+        font-size:70px;
+        letter-spacing:-3px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+
+        width:220px;
+    }
+
+    .hero-bus-area{
+        display:none;
+    }
+
+    .about,
+    .destinations,
+    .trips,
+    .tracking{
+        padding:
+            90px 20px;
+    }
+
+    .about h2,
+    .section-head h2,
+    .tracking-text h2,
+    .contact h2{
+        font-size:52px;
+    }
+
+    .about-art{
+        height:400px;
+
+        transform:scale(.85);
+
+        transform-origin:center;
+    }
+
+    .destination-grid,
+    .trip-grid{
+        grid-template-columns:1fr;
+    }
+
+    .destination{
+        height:360px;
+    }
+
+    .map{
+        height:360px;
+    }
+
+    .contact-buttons{
+        flex-direction:column;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <a href="#inicio" class="logo">
+
+        <div class="logo-icon">
+            TH
+        </div>
+
+        <div class="logo-text">
+
+            <span class="logo-small">
+                TURISMO & EXCURSÕES
+            </span>
+
+            <span class="logo-big">
+                TRANS<span>HUGO</span>
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="#inicio">Início</a>
+            </li>
+
+            <li>
+                <a href="#sobre">A TRANS HUGO</a>
+            </li>
+
+            <li>
+                <a href="#destinos">Destinos</a>
+            </li>
+
+            <li>
+                <a href="#viagens">Viagens</a>
+            </li>
+
+            <li>
+                <a href="#rastreamento">Rastreamento</a>
+            </li>
+
+            <li>
+                <a href="#contato">Contato</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <a href="#viagens" class="header-button">
+        RESERVE SUA VIAGEM
+    </a>
+
+
+    <button class="menu-button"
+            onclick="toggleMenu()">
+        ☰
+    </button>
+
+</header>
+
+
+<!-- MENU MOBILE -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="#inicio" onclick="toggleMenu()">
+        INÍCIO
+    </a>
+
+    <a href="#sobre" onclick="toggleMenu()">
+        A TRANS HUGO
+    </a>
+
+    <a href="#destinos" onclick="toggleMenu()">
+        DESTINOS
+    </a>
+
+    <a href="#viagens" onclick="toggleMenu()">
+        VIAGENS
+    </a>
+
+    <a href="#rastreamento" onclick="toggleMenu()">
+        RASTREAMENTO
+    </a>
+
+    <a href="#contato" onclick="toggleMenu()">
+        CONTATO
+    </a>
+
+</div>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+
+    <div class="hero-content reveal">
+
+        <div class="hero-label">
+            TURISMO • ESTRADA • EXPERIÊNCIAS
+        </div>
+
+
+        <h1>
+            VIVA A
+            <span>ESTRADA.</span>
+        </h1>
+
+
+        <p class="hero-description">
+
+            Mais que uma viagem.
+            Uma experiência para lembrar.
+
+            Conheça novos destinos,
+            faça novas histórias e viaje
+            com quem entende de estrada.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#viagens"
+               class="button-green">
+
+                VER EXCURSÕES →
+
+            </a>
+
+
+            <a href="#destinos"
+               class="button-outline">
+
+                CONHECER DESTINOS
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ÔNIBUS -->
+
+    <div class="hero-bus-area">
+
+        <div class="green-circle"></div>
+
+        <div class="bus">
+
+            <div class="bus-window">
+
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+
+            </div>
+
+            <div class="bus-line"></div>
+
+            <div class="bus-logo">
+                Trans<span>HUGO</span>
+            </div>
+
+            <div class="bus-front"></div>
+
+            <div class="light light1"></div>
+            <div class="light light2"></div>
+
+            <div class="wheel wheel1"></div>
+            <div class="wheel wheel2"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RABISCOS -->
+
+    <div class="scribble one">
+        Bora viajar? ✦
+    </div>
+
+    <div class="circle-draw"></div>
+
+    <div class="scribble two">
+        → partiu estrada!
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MARQUEE
+===================================================== -->
+
+<div class="marquee">
+
+    <div class="marquee-content">
+
+        <span>
+            TRANS HUGO ✦
+        </span>
+
+        <span>
+            TURISMO & EXCURSÕES ✦
+        </span>
+
+        <span>
+            VIVA A ESTRADA ✦
+        </span>
+
+        <span>
+            NOVOS DESTINOS ✦
+        </span>
+
+        <span>
+            TRANS HUGO ✦
+        </span>
+
+        <span>
+            TURISMO & EXCURSÕES ✦
+        </span>
+
+        <span>
+            VIVA A ESTRADA ✦
+        </span>
+
+        <span>
+            NOVOS DESTINOS ✦
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SOBRE
+===================================================== -->
+
+<section class="about" id="sobre">
+
+    <div class="about-container">
+
+
+        <div class="reveal">
+
+            <div class="section-label">
+                QUEM SOMOS
+            </div>
+
+
+            <h2>
+                MAIS QUE
+                <span>TRANSPORTE.</span>
+            </h2>
+
+
+            <p>
+
+                A TRANS HUGO nasceu para transformar
+                cada viagem em uma experiência.
+
+                Nossa estrada é feita de destinos,
+                amizades, aventuras e histórias
+                que ficam para sempre.
+
+            </p>
+
+
+            <div class="checks">
+
+                <div class="check">
+                    <b>✓</b>
+                    Turismo com excelência
+                </div>
+
+                <div class="check">
+                    <b>✓</b>
+                    Pessoas em primeiro lugar
+                </div>
+
+                <div class="check">
+                    <b>✓</b>
+                    Destinos que marcam
+                </div>
+
+                <div class="check">
+                    <b>✓</b>
+                    Paixão pela estrada
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="about-art reveal">
+
+            <div class="paper">
+
+                <div class="paper-inner">
+
+                    <div class="paper-title">
+
+                        TRANS
+                        <span>HUGO</span>
+
+                        <br>
+
+                        <small>
+                            TURISMO & EXCURSÕES
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="note">
+
+                ✦ PLANO DE VIAGEM
+
+                <br><br>
+
+                ✓ Foco<br>
+                ✓ Disciplina<br>
+                ✓ Estrada<br>
+                ✓ Novos destinos
+
+                <br><br>
+
+                <strong>
+                    Deus à frente.
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DESTINOS
+===================================================== -->
+
+<section class="destinations" id="destinos">
+
+
+    <div class="section-head reveal">
+
+        <div>
+
+            <div class="section-label">
+                PEGUE A ESTRADA
+            </div>
+
+            <h2>
+                NOSSOS
+                <span>DESTINOS.</span>
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            Chame os amigos,
+            prepare a mochila e venha
+            conhecer lugares incríveis
+            com a TRANS HUGO.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="destination-grid">
+
+
+        <article class="destination reveal">
+
+            <div class="destination-background">
+                GO
+            </div>
+
+            <div class="destination-number">
+                01
+            </div>
+
+            <div class="destination-content">
+
+                <small>
+                    GOIÁS
+                </small>
+
+                <h3>
+                    GOIÂNIA
+                </h3>
+
+                <p>
+                    Cultura, gastronomia
+                    e experiências.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="destination reveal">
+
+            <div class="destination-background">
+                BA
+            </div>
+
+            <div class="destination-number">
+                02
+            </div>
+
+            <div class="destination-content">
+
+                <small>
+                    BAHIA
+                </small>
+
+                <h3>
+                    SALVADOR
+                </h3>
+
+                <p>
+                    Praias, cultura e
+                    muita história.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="destination reveal">
+
+            <div class="destination-background">
+                CH
+            </div>
+
+            <div class="destination-number">
+                03
+            </div>
+
+            <div class="destination-content">
+
+                <small>
+                    NATUREZA
+                </small>
+
+                <h3>
+                    CHAPADA
+                </h3>
+
+                <p>
+                    Trilhas, cachoeiras
+                    e aventura.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VIAGENS
+===================================================== -->
+
+<section class="trips" id="viagens">
+
+
+    <div class="section-head reveal">
+
+        <div>
+
+            <div class="section-label">
+                PRÓXIMAS SAÍDAS
+            </div>
+
+            <h2>
+                NOSSAS
+                <span>VIAGENS.</span>
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            Escolha seu próximo destino,
+            confira todos os detalhes
+            e reserve seu lugar.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="trip-grid">
+
+
+        <!-- VIAGEM 1 -->
+
+        <article class="trip-card reveal">
+
+            <div class="trip-photo">
+
+                <div class="mini-bus">
+
+                    <div class="mini-wheel one"></div>
+                    <div class="mini-wheel two"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="trip-content">
+
+                <div class="trip-date">
+                    25 AGO • 2026
+                </div>
+
+                <h3>
+                    Goiânia → Caldas Novas
+                </h3>
+
+                <p>
+                    Final de semana especial
+                    com conforto, segurança
+                    e muita diversão.
+                </p>
+
+
+                <div class="trip-details">
+
+                    <div>
+                        🚌 Ônibus: TH-204
+                    </div>
+
+                    <div>
+                        🕐 Saída: 06:00
+                    </div>
+
+                    <div>
+                        📍 Embarque: Goiânia
+                    </div>
+
+                    <div>
+                        🛣️ Duração: 3h30
+                    </div>
+
+                </div>
+
+
+                <div class="trip-bottom">
+
+                    <div class="price">
+                        R$ 299
+                        <small>/ pessoa</small>
+                    </div>
+
+                    <button
+                        class="reserve"
+                        onclick="openModal('Goiânia → Caldas Novas')">
+
+                        RESERVAR
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- VIAGEM 2 -->
+
+        <article class="trip-card reveal">
+
+            <div class="trip-photo">
+
+                <div class="mini-bus">
+
+                    <div class="mini-wheel one"></div>
+                    <div class="mini-wheel two"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="trip-content">
+
+                <div class="trip-date">
+                    05 SET • 2026
+                </div>
+
+                <h3>
+                    Goiânia → Salvador
+                </h3>
+
+                <p>
+                    Uma experiência incrível
+                    pelas estradas brasileiras.
+                </p>
+
+
+                <div class="trip-details">
+
+                    <div>
+                        🚌 Ônibus: TH-310
+                    </div>
+
+                    <div>
+                        🕐 Saída: 18:00
+                    </div>
+
+                    <div>
+                        📍 Embarque: Goiânia
+                    </div>
+
+                    <div>
+                        🛣️ Viagem interestadual
+                    </div>
+
+                </div>
+
+
+                <div class="trip-bottom">
+
+                    <div class="price">
+                        R$ 799
+                        <small>/ pessoa</small>
+                    </div>
+
+                    <button
+                        class="reserve"
+                        onclick="openModal('Goiânia → Salvador')">
+
+                        RESERVAR
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- VIAGEM 3 -->
+
+        <article class="trip-card reveal">
+
+            <div class="trip-photo">
+
+                <div class="mini-bus">
+
+                    <div class="mini-wheel one"></div>
+                    <div class="mini-wheel two"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="trip-content">
+
+                <div class="trip-date">
+                    19 SET • 2026
+                </div>
+
+                <h3>
+                    Chapada dos Veadeiros
+                </h3>
+
+                <p>
+                    Natureza, aventura e
+                    momentos inesquecíveis.
+                </p>
+
+
+                <div class="trip-details">
+
+                    <div>
+                        🚌 Ônibus: TH-212
+                    </div>
+
+                    <div>
+                        🕐 Saída: 05:30
+                    </div>
+
+                    <div>
+                        📍 Embarque: Goiânia
+                    </div>
+
+                    <div>
+                        🏞️ Passeio de natureza
+                    </div>
+
+                </div>
+
+
+                <div class="trip-bottom">
+
+                    <div class="price">
+                        R$ 449
+                        <small>/ pessoa</small>
+                    </div>
+
+                    <button
+                        class="reserve"
+                        onclick="openModal('Chapada dos Veadeiros')">
+
+                        RESERVAR
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RASTREAMENTO
+===================================================== -->
+
+<section class="tracking"
+         id="rastreamento">
+
+
+    <div class="tracking-container">
+
+
+        <div class="tracking-text reveal">
+
+            <div class="section-label">
+                GPS • LOCALIZAÇÃO
+            </div>
+
+
+            <h2>
+                ONDE ESTÁ
+                <span>O ÔNIBUS?</span>
+            </h2>
+
+
+            <p>
+
+                Acompanhe o trajeto do ônibus
+                TRANS HUGO e veja onde está
+                seu veículo durante a viagem.
+
+            </p>
+
+
+            <div class="status">
+
+                <div class="status-dot"></div>
+
+                <div>
+
+                    <strong id="busStatus">
+                        TH-204 • ONLINE
+                    </strong>
+
+                    <span id="updateText">
+                        Localização atualizada agora
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="update"
+                onclick="updateBus()">
+
+                ATUALIZAR LOCALIZAÇÃO
+
+            </button>
+
+        </div>
+
+
+
+        <!-- MAPA -->
+
+        <div class="map reveal">
+
+
+            <div class="map-road road-a"></div>
+
+            <div class="map-road road-b"></div>
+
+            <div class="map-road road-c"></div>
+
+
+            <div class="city goiania">
+
+                <div class="city-dot"></div>
+
+                <div class="city-name">
+                    GOIÂNIA
+                </div>
+
+            </div>
+
+
+            <div
+                class="map-bus"
+                id="mapBus">
+
+                🚌
+
+            </div>
+
+
+            <div
+                class="bus-code"
+                id="busCode">
+
+                TH-204 • EM MOVIMENTO
+
+            </div>
+
+
+            <div class="city caldas">
+
+                <div class="city-dot"></div>
+
+                <div class="city-name">
+                    CALDAS NOVAS
+                </div>
+
+            </div>
+
+
+            <div class="map-info">
+
+                <strong>
+                    TRANS HUGO • GPS
+                </strong>
+
+                <span>
+                    Ônibus TH-204 em movimento
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FRASE
+===================================================== -->
+
+<section class="quote">
+
+    <h2>
+        "O DESTINO IMPORTA,
+        MAS A JORNADA TAMBÉM."
+    </h2>
+
+    <p>
+        TRANS HUGO • TURISMO & EXCURSÕES
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTATO
+===================================================== -->
+
+<section class="contact"
+         id="contato">
+
+    <div class="reveal">
+
+        <div class="section-label">
+            FALE COM A GENTE
+        </div>
+
+
+        <h2>
+            VAMOS PEGAR
+            <span>A ESTRADA?</span>
+        </h2>
+
+
+        <p>
+            Entre em contato com a TRANS HUGO
+            e programe sua próxima viagem.
+        </p>
+
+
+        <div class="contact-buttons">
+
+            <a href="#"
+               class="contact-button">
+
+                WHATSAPP
+
+            </a>
+
+            <a href="#"
+               class="contact-button dark">
+
+                INSTAGRAM
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    TH
+                </div>
+
+                <div class="logo-text">
+
+                    <span class="logo-small">
+                        TURISMO & EXCURSÕES
+                    </span>
+
+                    <span class="logo-big">
+                        TRANS<span>HUGO</span>
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="footer-description">
+
+                Turismo, excursões e experiências
+                para quem ama viajar.
+
+                <br><br>
+
+                Conectando pessoas a novos destinos
+                e criando histórias inesquecíveis.
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                NAVEGAÇÃO
+            </h4>
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#sobre">
+                A TRANS HUGO
+            </a>
+
+            <a href="#destinos">
+                Destinos
+            </a>
+
+            <a href="#viagens">
+                Viagens
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                SERVIÇOS
+            </h4>
+
+            <a href="#">
+                Turismo
+            </a>
+
+            <a href="#">
+                Excursões
+            </a>
+
+            <a href="#">
+                Eventos
+            </a>
+
+            <a href="#">
+                Transporte
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                CONTATO
+            </h4>
+
+            <a href="#">
+                WhatsApp
+            </a>
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                E-mail
+            </a>
+
+            <a href="#">
+                Atendimento
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 TRANS HUGO
+        </span>
+
+        <span>
+            TURISMO • ESTRADA • EXPERIÊNCIAS
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     MODAL DE RESERVA
+===================================================== -->
+
+<div class="modal"
+     id="modal">
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            onclick="closeModal()">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Reserve sua viagem
+        </h2>
+
+
+        <p id="tripSelected">
+            Preencha seus dados.
+        </p>
+
+
+        <div class="form-group">
+
+            <label>
+                SEU NOME
+            </label>
+
+            <input
+                type="text"
+                placeholder="Digite seu nome">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                TELEFONE
+            </label>
+
+            <input
+                type="tel"
+                placeholder="(00) 00000-0000">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                QUANTIDADE DE PASSAGEIROS
+            </label>
+
+            <select>
+
+                <option>
+                    1 passageiro
+                </option>
+
+                <option>
+                    2 passageiros
+                </option>
+
+                <option>
+                    3 passageiros
+                </option>
+
+                <option>
+                    4 passageiros
+                </option>
+
+                <option>
+                    5 passageiros
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="form-button"
+            onclick="sendReservation()">
+
+            SOLICITAR RESERVA
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   MENU MOBILE
+========================================================= */
+
+function toggleMenu(){
+
+    const menu =
+        document.getElementById("mobileMenu");
+
+    menu.style.display =
+        menu.style.display === "block"
+        ? "none"
+        : "block";
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+function openModal(trip){
+
+    document
+        .getElementById("modal")
+        .classList.add("active");
+
+    document
+        .getElementById("tripSelected")
+        .innerText =
+        "Você selecionou: " + trip;
+
+}
+
+function closeModal(){
+
+    document
+        .getElementById("modal")
+        .classList.remove("active");
+
+}
+
+
+document
+    .getElementById("modal")
+    .addEventListener(
+        "click",
+        function(event){
+
+            if(event.target === this){
+                closeModal();
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   RESERVA
+========================================================= */
+
+function sendReservation(){
+
+    alert(
+        "Solicitação enviada!\n\n" +
+        "A TRANS HUGO entrará em contato para confirmar sua reserva."
+    );
+
+    closeModal();
+
+}
+
+
+/* =========================================================
+   GPS SIMULADO
+========================================================= */
+
+function updateBus(){
+
+    const bus =
+        document.getElementById("mapBus");
+
+    const code =
+        document.getElementById("busCode");
+
+    const status =
+        document.getElementById("busStatus");
+
+    const text =
+        document.getElementById("updateText");
+
+
+    bus.style.transition =
+        "all 1.5s ease";
+
+
+    const positions = [
+        ["52%","40%"],
+        ["58%","37%"],
+        ["63%","34%"],
+        ["68%","31%"]
+    ];
+
+
+    const random =
+        positions[
+            Math.floor(
+                Math.random() *
+                positions.length
+            )
+        ];
+
+
+    bus.style.left =
+        random[0];
+
+    bus.style.top =
+        random[1];
+
+
+    code.innerText =
+        "TH-204 • EM MOVIMENTO";
+
+
+    status.innerText =
+        "TH-204 • ONLINE";
+
+
+    text.innerText =
+        "Localização atualizada agora";
+
+
+    setTimeout(function(){
+
+        text.innerText =
+            "Ônibus seguindo para Caldas Novas";
+
+    },2000);
+
+}
+
+
+/* =========================================================
+   ANIMAÇÃO AO ROLAR
+========================================================= */
+
+const elements =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(entry.isIntersecting){
+
+                        entry.target
+                            .classList
+                            .add("visible");
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+elements.forEach(
+    function(element){
+
+        observer.observe(element);
+
+    }
+);
+
+
+/* =========================================================
+   HEADER AO ROLAR
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        const header =
+            document.querySelector("header");
+
+        if(window.scrollY > 50){
+
+            header.style.background =
+                "rgba(0,47,32,.98)";
+
+        }else{
+
+            header.style.background =
+                "rgba(0,47,32,.92)";
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
